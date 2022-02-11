@@ -57,3 +57,19 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#dev
+venv/
+sample_imgs/cafe_135x100_s.jpg
+sample_imgs/cafe_135x100_s.png
+sample_imgs/cafe_135x100_s.tiff
+sample_imgs/life_20x20_s.jpg
+sample_imgs/life_50x50_s.jpg
+sample_imgs/life_50x50_s.png
+sample_imgs/life_50x50_s.tiff
+sample_imgs/life_80x80_s.jpg
+sample_imgs/life_80x80_s.png
+sample_imgs/life_80x80_s.tiff
+sample_imgs/life_81x54_s.jpg
+sample_imgs/life_81x54_s.png
+sample_imgs/life_81x54_s.tiff
