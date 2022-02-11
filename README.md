@@ -1,4 +1,4 @@
-# Minecraft Dynmap Time Machine
+# Minecraft Dynmap Time Machine (Async Downloader Ver)
 
 [![Build Status](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine.svg?branch=master)](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine)
 
