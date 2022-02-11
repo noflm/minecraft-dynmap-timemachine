@@ -17,7 +17,7 @@ setup(
     name='dynmap_timemachine',
     version='0.9.5',
     description='Create extremely large images from Minecraft server\'s Dynmap plugin.',
-    long_description=readme(),
+    long_description='nyahello!',
     url='https://github.com/martinsik/minecraft-dynmap-timemachine',
     author='Martin Sikora',
     author_email='martin.sikora.ahoj@gmail.com',

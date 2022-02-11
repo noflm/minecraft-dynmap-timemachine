@@ -85,12 +85,14 @@ if __name__ == '__main__':
         m_loc = projection.MinecraftLocation(center[0], center[1], center[2], dm_map.worldtomap)
 
         tm = time_machine.TimeMachine(dm)
+        tiles_url = dm.urls['tiles']
+        #print(tiles_url)
         dest = args.dest
         zoom = int(args.zoom)
-        img = tm.capture_single(dm_map, m_loc.to_tile_location(zoom), size)
+        img = tm.capture_single(tiles_url=tiles_url, map=dm_map, t_loc=m_loc.to_tile_location(zoom), size=size)
 
         if os.path.isdir(dest):
-            files = list(glob.iglob(os.path.join(dest, '*.png')))
+            files = list(glob.iglob(os.path.join(dest, '*.jpg')))
             difference = 0
             if files:
                 newest_image = max(files, key=os.path.getctime)
@@ -98,7 +100,7 @@ if __name__ == '__main__':
                 threshold = float(args.threshold)
 
             if not files or difference >= threshold:
-                dest = os.path.join(dest, time.strftime('%Y-%m-%d %H-%M-%S') + '.png')
+                dest = os.path.join(dest, time.strftime('%Y-%m-%d %H-%M-%S') + '.jpg')
                 img.save(dest)
                 logging.info('saving timelapse image to "%s" (%d KB) with difference %.2f', dest, os.path.getsize(dest) / 1000, difference * 100)
         else:

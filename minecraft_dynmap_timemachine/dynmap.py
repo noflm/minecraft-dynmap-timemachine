@@ -2,6 +2,7 @@
 import json
 import time
 import math
+import asyncio
 
 import re
 from . import simple_downloader
@@ -37,16 +38,19 @@ class DynMap(object):
     def _download_config(self):
         """configuration of all worlds and their maps"""
         rel_path = self.urls['configuration'].replace('{timestamp}', str(int(time.time())))
-        return simple_downloader.download(self.url + '/' + rel_path)
+        return asyncio.run(simple_downloader.download(self.url + '/' + rel_path))
 
     def _download_config_urls(self):
         """DynMap configuration"""
-        return simple_downloader.download(self.url + '/' + 'standalone/config.js')
+        return asyncio.run(simple_downloader.download(self.url + '/' + 'standalone/config.js'))
 
     @staticmethod
     def parse_config_urls_string(jsonlike_str):
-        m = re.search('url \: (.+)};', jsonlike_str, re.DOTALL)
+        m = re.search(r"url:(.*)}", jsonlike_str, re.DOTALL)
+        if m is None:
+            m = re.search(r"url \: (.+)};", jsonlike_str, re.DOTALL)
         #return json.loads(m.group(1))
+        print(m.group(1))
 
         pattern = r"([a-zA-Z_][a-zA-Z_0-9]*)\s*\:"
         repl = lambda match: '"{}":'.format(match.group(1))
@@ -125,13 +129,14 @@ class Map(object):
     # def is_known_shader(shader_name):
     #     return shader_name in Map.SHADERS
 
-    def image_url(self, t_loc):
+    def image_url(self, t_loc, tiles_url):
         zoom = t_loc.zoom
         chunk_x = math.floor(t_loc.x / 32.0)
         chunk_y = math.floor(t_loc.y / 32.0)
         dashes = ('' if zoom == 0 else ('z' * zoom) + '_')
 
-        image_url = '/tiles/%s/%s/%d_%d/%s%d_%d.png' % (self._world, self.prefix, chunk_x, chunk_y, dashes, t_loc.x, t_loc.y)
+        #image_url = '/tiles/%s/%s/%d_%d/%s%d_%d.png' % (self._world, self.prefix, chunk_x, chunk_y, dashes, t_loc.x, t_loc.y)
+        image_url = f'/{tiles_url}{self._world}/{self.prefix}/{chunk_x}_{chunk_y}/{dashes}{t_loc.x}_{t_loc.y}.jpg'
         return image_url
 
     @property
