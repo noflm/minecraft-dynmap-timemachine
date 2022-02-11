@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine.svg?branch=master)](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine)
 
-Python 2.7, 3.3+ and PyPy command line script that downloads tiles from a Minecraft's Dynmap plugin HTTP server and composes one image in extremely large resolution suitable for print.
+Python 3.6+ and PyPy command line script that downloads tiles from a Minecraft's Dynmap plugin HTTP server and composes one image in extremely large resolution suitable for print.
 
 ![Scaled down image](https://raw.githubusercontent.com/martinsik/minecraft-dynmap-timemachine/master/doc/majncraft.3320.crop.png)
 
@@ -33,10 +33,11 @@ List of all parameter is as follows:
       -v, --verbose
 
 ## Installation
+Clone this repo.
+Install using `pip`:
 
-Most easily install using `pip`:
-
-    $ pip install dynmap_timemachine
+    $ cd minecraft-dynamp-timemachine
+    $ pip install
 
 ## 1. Example - capture one large image
 
