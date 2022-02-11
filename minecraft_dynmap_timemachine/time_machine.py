@@ -1,7 +1,6 @@
 import logging
 import io
 import aiohttp
-import httpx
 import requests
 import asyncio
 
