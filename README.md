@@ -13,7 +13,7 @@ Python3.6以上で動作します。
 **自己責任かつご自分の管理下にあるDynmapのバックアップ等にご活用ください。**
 
 
-![Scaled down image](https://raw.githubusercontent.com/noflm/minecraft-dynmap-timemachine/master/sample_imgs/life_5x5_s.jpg)
+![Scaled down image](https://raw.githubusercontent.com/noflm/minecraft-dynmap-timemachine/master/sample_imgs/life_81x54_s_comp.jpg)
 
 
 コマンドパラメータ:
