@@ -50,7 +50,7 @@ class DynMap(object):
         if m is None:
             m = re.search(r"url \: (.+)};", jsonlike_str, re.DOTALL)
         #return json.loads(m.group(1))
-        print(m.group(1))
+        #print(m.group(1))
 
         pattern = r"([a-zA-Z_][a-zA-Z_0-9]*)\s*\:"
         repl = lambda match: '"{}":'.format(match.group(1))
