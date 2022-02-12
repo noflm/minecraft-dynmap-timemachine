@@ -13,7 +13,7 @@ Python3.6以上で動作します。
 **自己責任かつご自分の管理下にあるDynmapのバックアップ等にご活用ください。**
 
 
-![Scaled down image](https://media.nyahello.jp/2022/02/full.jpg)
+[img](https://imgur.com/Ojk5Llj)
 
 
 コマンドパラメータ:
@@ -110,4 +110,4 @@ Python3.6以上で動作します。
    
    合計で「81 * 2 * 54 * 2 = 17496」タイルをダウンロードする必要があるので、サーバーの状況によっては時間がかかったり一部の画像がエラーで取得出来ない可能性があります。最終的な画像サイズは66.7MB(JPEGの場合)になります。(PNGだと593MB、TIFFだと820MB)
    
-   ![The final image scaled down to 728px width](https://media.nyahello.jp/2022/02/full.jpg)
+   [img](https://imgur.com/Ojk5Llj)
