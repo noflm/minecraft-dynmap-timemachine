@@ -129,14 +129,14 @@ class Map(object):
     # def is_known_shader(shader_name):
     #     return shader_name in Map.SHADERS
 
-    def image_url(self, t_loc, tiles_url):
+    def image_url(self, t_loc, tiles_url, tiles_format):
         zoom = t_loc.zoom
         chunk_x = math.floor(t_loc.x / 32.0)
         chunk_y = math.floor(t_loc.y / 32.0)
         dashes = ('' if zoom == 0 else ('z' * zoom) + '_')
 
         #image_url = '/tiles/%s/%s/%d_%d/%s%d_%d.png' % (self._world, self.prefix, chunk_x, chunk_y, dashes, t_loc.x, t_loc.y)
-        image_url = f'/{tiles_url}{self._world}/{self.prefix}/{chunk_x}_{chunk_y}/{dashes}{t_loc.x}_{t_loc.y}.jpg'
+        image_url = f'/{tiles_url}{self._world}/{self.prefix}/{chunk_x}_{chunk_y}/{dashes}{t_loc.x}_{t_loc.y}.{tiles_format}'
         return image_url
 
     @property

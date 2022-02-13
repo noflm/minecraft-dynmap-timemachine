@@ -86,10 +86,11 @@ if __name__ == '__main__':
 
         tm = time_machine.TimeMachine(dm)
         tiles_url = dm.urls['tiles']
-        #print(tiles_url)
+        tiles_format = dm.config['worlds'][0]['maps'][0]['image-format']
+        #print(tiles_format)
         dest = args.dest
         zoom = int(args.zoom)
-        img = tm.capture_single(tiles_url=tiles_url, map=dm_map, t_loc=m_loc.to_tile_location(zoom), size=size)
+        img = tm.capture_single(tiles_url=tiles_url, tiles_format=tiles_format, map=dm_map, t_loc=m_loc.to_tile_location(zoom), size=size)
 
         if os.path.isdir(dest):
             files = list(glob.iglob(os.path.join(dest, '*.jpg')))
