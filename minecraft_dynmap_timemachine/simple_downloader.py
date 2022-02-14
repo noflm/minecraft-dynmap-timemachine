@@ -9,7 +9,7 @@ headers = {
 
 async def download(url, binary=False):
     logging.debug('download: %s', url)
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
         response = await session.get(url=url, headers=headers)
 
         if response.status == requests.codes.ok:

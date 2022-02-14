@@ -38,7 +38,7 @@ class TimeMachine(object):
     
     async def create_dest_img(self, processed_data, dest_img, total_tiles, zoomed_scale, from_x, to_y, pause):
         timeout = aiohttp.ClientTimeout(total=3600)
-        async with aiohttp.ClientSession(timeout=timeout) as session:
+        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False), timeout=timeout) as session:
             tasks = []
             for data in processed_data:
                 tasks.append(asyncio.ensure_future(self.get_aiohttp(session=session, data=data, dest_img=dest_img, total_tiles=total_tiles, zoomed_scale=zoomed_scale, from_x=from_x, to_y=to_y)))
